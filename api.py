@@ -25,7 +25,10 @@ def logins():
         if password != database[user][0]:
             return 'Senha invalida', 401
         else:
-            return str(database[user][1]), 200
+            res = database[user][1]
+            return ({
+        "contrato": res,
+    })
 
 if __name__ == '__main__':
         app.run()
